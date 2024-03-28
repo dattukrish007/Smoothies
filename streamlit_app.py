@@ -9,8 +9,7 @@ st.title(":cup_with_straw: Customize Your Smoothie!:cup_with_straw:")
 st.write("Choose the fruits you want in your smoothie!")
 
 
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-st.text(fruityvice_response)
+
 # option = st.selectbox(
 #    "What is your favorite fruite?",
 #    ("Banana", "Strawberries", "Peaches"),
@@ -54,3 +53,6 @@ if ingredients_list:
     if time_to_insert:
         session.sql(my_insert_stmt).collect()
         st.success(f'Your Smoothie is ordered! {name_on_order}', icon="✅")
+
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+st.text(fruityvice_response)
